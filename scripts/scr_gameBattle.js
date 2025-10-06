@@ -1,28 +1,48 @@
 //Declarando os OBJETOS jogador:
 const player1 = {
     color: "red",
-    pokemon: "",
+    pokemon1: "",
+    pokemon2: "",
+    pokemon3: "",
+    pokemon4: "",
+    pokemon5: "",
+    pokemon6: "",
     item1: "",
     item2: "",
     item3: ""
 }
 const player2 = {
     color: "blue",
-    pokemon: "",
+    pokemon1: "",
+    pokemon2: "",
+    pokemon3: "",
+    pokemon4: "",
+    pokemon5: "",
+    pokemon6: "",
     item1: "",
     item2: "",
     item3: ""
 }
 const player3 = {
     color: "yellow",
-    pokemon: "",
+    pokemon1: "",
+    pokemon2: "",
+    pokemon3: "",
+    pokemon4: "",
+    pokemon5: "",
+    pokemon6: "",
     item1: "",
     item2: "",
     item3: ""
 }
 const player4 = {
     color: "white",
-    pokemon: "",
+    pokemon1: "",
+    pokemon2: "",
+    pokemon3: "",
+    pokemon4: "",
+    pokemon5: "",
+    pokemon6: "",
     item1: "",
     item2: "",
     item3: ""
@@ -43,4 +63,8 @@ pokemons = [
 
 
 
-//
+
+pokemon = {nome: "pikachu", status: "veneno"}
+
+
+
