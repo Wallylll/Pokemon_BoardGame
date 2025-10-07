@@ -20,8 +20,6 @@ while(pokemons.length <= 4){
 console.log(pokemons);
 //---
 
-
-
 //const pokemon = new Player('pikachu', ["choque", "cabecada"], "saudavel", "paralisia")
 //const pokemon2 = new Player('lutador', "murro", "saudavel", "none")
 

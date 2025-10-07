@@ -8,9 +8,7 @@ body{
     display: flex;
     justify-content: center;
 
-    background-image: url(../imgs/backgroundGame.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: oklch(76.9% 0.188 70.08);
 }
 #board{
     width: 100vw;
@@ -50,11 +48,11 @@ body{
     border: 2px solid black;
 }
 #player3{
-    background-color: blue;
+    background-color: oklch(62.3% 0.214 259.815);
     border: 2px solid black;
 }
 #player4{
-    background-color: yellow;
+    background-color: #E2AD2C;
     border: 2px solid black;
     color: black;
 }
@@ -109,7 +107,7 @@ body{
     top: -1rem;
     position: absolute;
     background-color: black;
-    padding: 0.1rem;
+    padding: 0.2rem;
     border-radius: 1rem;
 
 }
@@ -144,9 +142,10 @@ body{
     flex-wrap: nowrap;
     width: 90%;
     height: 50%;
-    background-color: rgba(0, 0, 0, 0.301);
+    background-color: rgba(0, 0, 0, 0.2);
 
     position: relative;
+    border-radius: 6rem;
 }
 
 .cardsInBattle{
