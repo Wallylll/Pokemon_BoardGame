@@ -6,6 +6,10 @@ class Player {
         this.itens = itens;
     }
 }
+
+let player1= new Player()
+
+//---Gerando um número aleatório para "catar" o ID dos pokemons e adicionar na lista do DECK.
 const pokemons = [];
 const ids = [107, 25, 4, 150];
 
@@ -13,8 +17,9 @@ while(pokemons.length <= 4){
     let random = ids[Math.floor(Math.random()* ids.length)];
     pokemons.push(random);
 }
+console.log(pokemons);
+//---
 
-console.log(pokemons)
 
 
 //const pokemon = new Player('pikachu', ["choque", "cabecada"], "saudavel", "paralisia")
