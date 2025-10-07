@@ -8,14 +8,44 @@
 </head>
 <body>
     <div id="board">
-        <img id="arena" src="../imgs/background.webp" alt="">
-        <div id="curPlayer">
-            <h2 class="playerName">Jogador 1</h2>
-            <div id="cards">
-                <div id="card1"><img src="tps://i.pinimg.com/736x/27/6a/de/276ade15864711a2af08857b8141a53e.jpg" alt=""></div>
-                <div id="item1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+        <div id="players">
+            <div id="playersTop">
+                <div class="player" id="player1">Player 1</div>
+                <div class="player" id="player2">Player 2</div>
+            </div>
+            <div id="playersBottom">
+                <div class="player" id="player3">Player 3</div>
+                <div class="player" id="player4">Player 4</div>
+            </div>
+        </div>
+        <div id="arena">
+            <img id="backgroundArena" src="../imgs/backgroundArena.png" alt="">
+
+            <div class="cardsInBattle" id="cardPlayer3"><img class="imgItem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+            <div class="cardsInBattle" id="cardPlayer2"><img class="imgItem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+            <div class="cardsInBattle" id="cardPlayer4"><img class="imgItem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+            <div class="cardsInBattle" id="cardPlayer1"><img class="imgItem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+        </div>
+        <div class="status">
+            <div class="itensSlots">
+                <div class="item equiped"><img class="ill" src="../imgs/itemIcon.png" alt=""></div>
+                <div class="item take"><img class="ill" src="../imgs/itemIcon.png" alt=""></div>
+            </div>
+            <div id="curPlayer">
+                <h2 class="playerName">Player 1</h2>
+                <div class="cards">
+                    <div class="card">1<img class="imgItem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>
+                    <div class="card">Slot 2</div>
+                    <div class="card">Slot 3</div>
+                    <div class="card">Slot 4</div>
+                    <div class="card">Slot 5</div>
+                    <div class="card">Slot 6</div>
+            
+                    <!--<div class="item1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>-->
+                </div>
             </div>
         </div>
     </div>
+    <script src="../scripts/scr_jogadores.js"></script>
 </body>
 </html>

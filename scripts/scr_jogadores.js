@@ -1,23 +1,24 @@
 class Player {
-    constructor(nome, ataque [], status, habilidate){
-        
-    }
-
-    function dano(ataque){
-        ataque - defesa - sem dano
-
-        dano = atkl - def
-        return hp - dano 
-
+    constructor(name, color, pokemons, itens){
+        this.name = name;
+        this.color = color;
+        this.pokemons = pokemons;
+        this.itens = itens;
     }
 }
-const numbers = [107, 25, 4, 150];
-let random = number[Math.floor(Math.random()* numbers.length)];
+const pokemons = [];
+const ids = [107, 25, 4, 150];
 
-const pokemon = new Player('pikachu', ["choque", "cabecada"], "saudavel", "paralisia")
-const pokemon2 = new Player('lutador', "murro", "saudavel", "none")
+while(pokemons.length <= 4){
+    let random = ids[Math.floor(Math.random()* ids.length)];
+    pokemons.push(random);
+}
 
-pokemon2.dano(ataque.choque.dano)
+console.log(pokemons)
 
 
+//const pokemon = new Player('pikachu', ["choque", "cabecada"], "saudavel", "paralisia")
+//const pokemon2 = new Player('lutador', "murro", "saudavel", "none")
+
+//pokemon2.dano(ataque.choque.dano)
 
