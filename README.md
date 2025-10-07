@@ -10,3 +10,6 @@ ETAPAS:
 VERSÕES:
   -V1.0:
       "Prototipo das mecânicas básicas e testes de funções";
+
+  -V1.1:
+      "Configurando e organizando o desing de jogo, (Dispositivos Móveis);
