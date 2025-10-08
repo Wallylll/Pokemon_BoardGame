@@ -1,38 +1,44 @@
+//Setando os botões, tela para o modal:
 const play = document.querySelector("#play");
 const modalNames = document.querySelector("#gameConfigs_playerName");
-
-//Mostrando e fechando os modais;
-const confirmPlayers = document.querySelector("#confirmPlayersNumber");
-
+const closeModalName = document.querySelector("#closeModalName");
+//Mostrando e fechando o modal;
 play.onclick = ()=>{
     modalNames.showModal();
 }
-/*closeModalNumber.onclick = ()=>{
+closeModalName.onclick = ()=>{
     modalNames.close();
-}*/
+}
 
+//Setando o botão, lista e elemento onde indexar as informações:
 const addPlayer = document.querySelector("#addPlayer");
 const inputPlayer = document.querySelector("#inputPlayer");
-const showPlayer = document.querySelector("#showPlayer");
+const showPlayers = document.querySelector("#showPlayers");
 let players = [];
 
 addPlayer.addEventListener("click", ()=>{
 
-   let player = inputPlayer.value;
-   console.log(player);
-   players.push(player);
-   inputPlayer.value = "";
-    console.log(inputPlayer.value);
-   let container = "";
-
-   players.forEach(el =>{
-    container += `
-        <span>${el}</span>
-
-    `
-   })
-   showPlayer.innerHTML = container;
+    if(players.length < 4){
+        let player = inputPlayer.value;
+        console.log(player);
+        players.push(player);
+        inputPlayer.value = "";
+        
+        let container = "";
+        
+        players.forEach(player =>{
+        container += `
+            <span>${player}</span>
+        `
+       })
+       showPlayers.innerHTML = container;
+    } else {
+        alert("Já atingiu o limite máximo de jogadores");
+    }
 })
+
+//Se tentar jogar com numero insulficiente de jogadores:
+addEventListener()
 
 
 //Configurando o número de jogadores corretamente:
