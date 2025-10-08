@@ -1,13 +1,30 @@
 class Player {
-    constructor(name, color, pokemons, itens){
+    pokemons = [];
+    itens = [];
+    constructor(name, color){
         this.name = name;
         this.color = color;
-        this.pokemons = pokemons;
-        this.itens = itens;
     }
+    //
+    //Fazendo um factory para adicionar na lista:
+    addItem(name, effect){
+        return {
+            name: name,
+            effect: effect
+        }
+    }
+    //
+    //
+    //
 }
 
-let player1= new Player()
+let player1 = new Player("James", "Green");
+
+player1.addItem("Faca", "Esfaqueia");
+
+console.log(player1.itens)
+
+
 
 //---Gerando um número aleatório para "catar" o ID dos pokemons e adicionar na lista do DECK.
 const pokemons = [];
@@ -24,4 +41,3 @@ console.log(pokemons);
 //const pokemon2 = new Player('lutador', "murro", "saudavel", "none")
 
 //pokemon2.dano(ataque.choque.dano)
-

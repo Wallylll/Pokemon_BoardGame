@@ -14,32 +14,43 @@ closeModalName.onclick = ()=>{
 const addPlayer = document.querySelector("#addPlayer");
 const inputPlayer = document.querySelector("#inputPlayer");
 const showPlayers = document.querySelector("#showPlayers");
-let players = [];
+var players = [];
 
 addPlayer.addEventListener("click", ()=>{
 
     if(players.length < 4){
-        let player = inputPlayer.value;
-        console.log(player);
-        players.push(player);
-        inputPlayer.value = "";
-        
-        let container = "";
-        
-        players.forEach(player =>{
-        container += `
-            <span>${player}</span>
-        `
-       })
-       showPlayers.innerHTML = container;
+        if(inputPlayer.value === ""){
+            alert("Insira um nome para o jogador!")
+        } else {
+            let player = inputPlayer.value;
+            console.log(player);
+            players.push(player);
+            inputPlayer.value = "";
+            
+            let container = "";
+            
+            players.forEach(player =>{
+            container += `
+                <span>${player}</span>
+            `
+            })
+            showPlayers.innerHTML = container;
+        }
     } else {
         alert("Já atingiu o limite máximo de jogadores");
     }
 })
 
 //Se tentar jogar com numero insulficiente de jogadores:
-addEventListener()
+const confirmPlayers = document.querySelector("#confirmPlayers");
 
+confirmPlayers.addEventListener("click", ()=>{
+    if(players.length < 2){
+        alert("Quantidade de jogadore insuficiente");
+    } else {
+        window.location.href = "../templates/gameBattle.html"
+    }
+});
 
 //Configurando o número de jogadores corretamente:
 /*confirmPlayers.addEventListener("click", ()=>{
