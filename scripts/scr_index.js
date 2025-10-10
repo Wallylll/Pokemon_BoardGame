@@ -1,8 +1,12 @@
-//Setando os botões, tela para o modal:
+import {players} from "./scr_jogadores.js";
+
+
+//Referenciando os elementos do modal:
 const play = document.querySelector("#play");
 const modalNames = document.querySelector("#gameConfigs_playerName");
 const closeModalName = document.querySelector("#closeModalName");
-//Mostrando e fechando o modal;
+
+//Funções de abertura e fechamento do modal;
 play.onclick = ()=>{
     modalNames.showModal();
 }
@@ -10,15 +14,17 @@ closeModalName.onclick = ()=>{
     modalNames.close();
 }
 
-//Setando o botão, lista e elemento onde indexar as informações:
+//Referenciando elementos para indexar as informações coletadas:
 const addPlayer = document.querySelector("#addPlayer");
 const inputPlayer = document.querySelector("#inputPlayer");
 const showPlayers = document.querySelector("#showPlayers");
-var players = [];
 
+//Evento de verificação, tratamento e implementação de valores:
 addPlayer.addEventListener("click", ()=>{
 
+    //Verificação para o caso do jogador tentar ultrapassar número máximo de jogadores:
     if(players.length < 4){
+        //Verificação para o caso do jogador tentar nomear o jogador com um campo vazio:
         if(inputPlayer.value === ""){
             alert("Insira um nome para o jogador!")
         } else {
@@ -30,9 +36,9 @@ addPlayer.addEventListener("click", ()=>{
             let container = "";
             
             players.forEach(player =>{
-            container += `
+                container += `
                 <span>${player}</span>
-            `
+                `
             })
             showPlayers.innerHTML = container;
         }
@@ -41,9 +47,10 @@ addPlayer.addEventListener("click", ()=>{
     }
 })
 
-//Se tentar jogar com numero insulficiente de jogadores:
+//Referenenciando o botão confirm
 const confirmPlayers = document.querySelector("#confirmPlayers");
 
+//Função para o caso do jogador tentar iniciar com um número insulficiente de jogadores:
 confirmPlayers.addEventListener("click", ()=>{
     if(players.length < 2){
         alert("Quantidade de jogadore insuficiente");
@@ -51,6 +58,7 @@ confirmPlayers.addEventListener("click", ()=>{
         window.location.href = "../templates/gameBattle.html"
     }
 });
+
 
 //Configurando o número de jogadores corretamente:
 /*confirmPlayers.addEventListener("click", ()=>{
