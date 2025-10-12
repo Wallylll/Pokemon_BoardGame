@@ -9,15 +9,20 @@
 <body>
     <div id="menu">
         <button id="play">Jogar</button>
-        <!---->
         <dialog id="gameConfigs_playerName">
             <h2>Configurações de jogos</h2>
             
             <label for="inputPlayer">
                 <h3>Nomeie o jogadores</h3>
             </label>
+            <select name="" id="selectColor">
+                <option id="red" value="red">Vermelho</option>
+                <option id="white" value="white">Branco</option>
+                <option id="blue" value="blue">Azul</option>
+                <option id="yellow" value="yellow">Amarelo</option>
+            </select>
             <input type="text" id="inputPlayer">
-            <button id="addPlayer">Adcionar Player</button>
+            <button id="addPlayer">Adcionar jogador</button>
 
             <div id="showPlayers">
                 <h4>Players:</h4>
@@ -29,6 +34,6 @@
             <button id="closeModalName">Cancelar</button>
         </dialog>
     </div>
-    <script src="scripts/scr_index.js"></script>
+    <script type="module" src="scripts/scr_index.js"></script>
 </body>
 </html>

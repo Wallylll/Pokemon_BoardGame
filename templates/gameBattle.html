@@ -9,9 +9,18 @@
 <body>
     <dialog id="modalAddPokemon">
         <h2>Dar as cartas</h2>
-        <button>+</button>
 
+        <h3 id="tit_curPlayer">Jogador: </h3>
+        
+        <h4>Pokédex:</h4>
+        <div id="tit_pokedexPlayer">
+            
+        </div>
+        
+        <p>Adicionar pokemon</p>
+        <button id="btn_addPokemon">+</button>
     </dialog>
+    
     <div id="board">
         <div id="players">
             <div id="playersTop">
@@ -52,6 +61,7 @@
         </div>
     </div>
     <script type="module" src="../scripts/scr_gameBattle.js"></script>
+    <script type="module" src="../scripts/scr_pokemonsArray.js"></script>
     <script type="module" src="../scripts/scr_jogadores.js"></script>
 </body>
 </html>
