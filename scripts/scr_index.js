@@ -1,4 +1,5 @@
-import { players } from "./scr_jogadores.js";
+import { creatPlayer, players } from "./scr_jogadores.js";
+
 
 //Referenciando os elementos do modal:
 const play = document.querySelector("#play");
@@ -19,24 +20,41 @@ const inputPlayer = document.querySelector("#inputPlayer");
 const showPlayers = document.querySelector("#showPlayers");
 const selectColor = document.querySelector("#selectColor");
 
-let colorValue = selectColor.value;
-
-//Lógica deficiente:
-    //Ele não envia o valor do selectColor pois não há nenhum submite ou nada que envie o valor integralmente;
-/*switch (colorValue){
-    case "Vermelho":
-        inputPlayer.style.backgroundColor = 'red';
-        break;
-    case "Branco":
-        inputPlayer.style.backgroundColor = "white";
-        break;
-    case "Azul":
-        inputPlayer.style.backgroundColor = "blue";
-        break;
-    case "Amarelo":
-        inputPlayer.style.backgroundColor = "yellow";
-        break;
-}*/
+let curColor;
+selectColor.addEventListener("change", () => {
+    
+    let colorValue = selectColor.value;
+    console.log(colorValue + " cor");
+    
+    switch (colorValue){
+        case "red":
+            console.log("aqui é o vermelho");
+            if(players.find(player => player.color === "red")){
+                alert("Um jogador já possui essa cor.");
+            }else{
+                curColor = "oklch(63.7% 0.237 25.331)";
+                inputPlayer.style.backgroundColor = 'oklch(63.7% 0.237 25.331)';
+            }
+            break;
+        case "white":
+            console.log("aqui é o branco")
+            if(players.find(player => player.color === "red")){
+                alert("Um jogador já possui essa cor.");
+            }else{
+                curColor = "oklch(86.9% 0.022 252.894)";
+                inputPlayer.style.backgroundColor = "oklch(86.9% 0.022 252.894)";
+            }
+            break;
+        case "blue":
+            console.log("aqui é o azul")
+            inputPlayer.style.backgroundColor = "oklch(62.3% 0.214 259.815)";
+            break;
+         case "yellow":
+             console.log("aqui é o amarelo")
+             inputPlayer.style.backgroundColor = "oklch(85.2% 0.199 91.936)";
+             break;
+    }
+})
 
 //Evento de verificação, tratamento e implementação de valores:
 addPlayer.addEventListener("click", ()=>{
@@ -47,11 +65,12 @@ addPlayer.addEventListener("click", ()=>{
         if(inputPlayer.value === ""){
             alert("Insira um nome para o jogador!")
         } else {
-            let player = inputPlayer.value;
+            let player = creatPlayer(inputPlayer.value, curColor);
             console.log(player);
-            players.push({name: player});
+            players.push(player);
+
             inputPlayer.value = "";
-            console.log(players)
+            console.log(players);
 
             let container = "";
             
@@ -82,8 +101,6 @@ confirmPlayers.addEventListener("click", ()=>{
 
 //Configurando o número de jogadores corretamente:
 /*confirmPlayers.addEventListener("click", ()=>{
-
-
  
     let numberPlayers = 
 
@@ -96,7 +113,6 @@ confirmPlayers.addEventListener("click", ()=>{
         modalNames.showModal();
     }
 
-    
 });
            <input type="text" id="namePlayer1" placeholder="Jogador 1" name="red">
             <input type="text" id="namePlayer2" placeholder="Jogador 2" name="white">
