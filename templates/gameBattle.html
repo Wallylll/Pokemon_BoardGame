@@ -6,21 +6,7 @@
     <title>Batalha</title>
     <link rel="stylesheet" href="../styles/sty_gameBattle.css">
 </head>
-<body>
-    <dialog id="modalAddPokemon">
-        <h2>Dar as cartas</h2>
-
-        <h3 id="tit_curPlayer">Jogador: </h3>
-        
-        <h4>Pokédex:</h4>
-        <div id="tit_pokedexPlayer">
-            
-        </div>
-        
-        <p>Adicionar pokemon</p>
-        <button id="btn_addPokemon">+</button>
-    </dialog>
-    
+<body>    
     <div id="board">
         <div id="players">
             <div id="playersTop">
@@ -45,6 +31,7 @@
                 <div class="item equiped"><img class="ill" src="../imgs/itemIcon.png" alt=""></div>
                 <div class="item take"><img class="ill" src="../imgs/itemIcon.png" alt=""></div>
             </div>
+
             <div id="curPlayer">
                 <h2 class="playerName">Jogador 1</h2>
                 <div class="cards">
@@ -54,13 +41,11 @@
                     <div class="card">Slot 4</div>
                     <div class="card">Slot 5</div>
                     <div class="card">Slot 6</div>
-            
-                    <!--<div class="item1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpNULM69V87ErQOpVZfeddsFpMophuDE5HVg&s" alt=""></div>-->
+        
                 </div>
             </div>
         </div>
     </div>
-    <script type="module" src="../scripts/scr_gameBattle.js"></script>
     <script type="module" src="../scripts/scr_pokemonsArray.js"></script>
     <script type="module" src="../scripts/scr_jogadores.js"></script>
 </body>

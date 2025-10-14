@@ -19,8 +19,8 @@ const addPlayer = document.querySelector("#addPlayer");
 const inputPlayer = document.querySelector("#inputPlayer");
 const showPlayers = document.querySelector("#showPlayers");
 const selectColor = document.querySelector("#selectColor");
-
 let curColor;
+
 selectColor.addEventListener("change", () => {
     
     let colorValue = selectColor.value;
@@ -38,7 +38,7 @@ selectColor.addEventListener("change", () => {
             break;
         case "white":
             console.log("aqui é o branco")
-            if(players.find(player => player.color === "red")){
+            if(players.find(player => player.color === "white")){
                 alert("Um jogador já possui essa cor.");
             }else{
                 curColor = "oklch(86.9% 0.022 252.894)";
@@ -46,12 +46,22 @@ selectColor.addEventListener("change", () => {
             }
             break;
         case "blue":
-            console.log("aqui é o azul")
-            inputPlayer.style.backgroundColor = "oklch(62.3% 0.214 259.815)";
+               console.log("aqui é o azul")
+            if(players.find(player => player.color === "blue")){
+                alert("Um jogador já possui essa cor.");
+            }else{
+                curColor = "oklch(62.3% 0.214 259.815)";
+                inputPlayer.style.backgroundColor = "oklch(62.3% 0.214 259.815)";
+            }
             break;
          case "yellow":
-             console.log("aqui é o amarelo")
-             inputPlayer.style.backgroundColor = "oklch(85.2% 0.199 91.936)";
+                console.log("aqui é o branco")
+            if(players.find(player => player.color === "yellow")){
+                alert("Um jogador já possui essa cor.");
+            }else{
+                curColor = "oklch(85.2% 0.199 91.936)";
+                inputPlayer.style.backgroundColor = "oklch(85.2% 0.199 91.936)";
+            }
              break;
     }
 })
@@ -63,7 +73,20 @@ addPlayer.addEventListener("click", ()=>{
     if(players.length < 4){
         //Verificação para o caso do jogador tentar nomear o jogador com um campo vazio:
         if(inputPlayer.value === ""){
-            alert("Insira um nome para o jogador!")
+            alert("Insira um nome para o jogador!");
+
+        }else if(curColor === "oklch(63.7% 0.237 25.331)" && players.find(player => player.color === "oklch(63.7% 0.237 25.331)")){
+            alert("A cor VERMELHO já foi escolhido!");
+
+        } else if(curColor === "oklch(86.9% 0.022 252.894)" && players.find(player => player.color === "oklch(86.9% 0.022 252.894)")){
+            alert("A cor BRANCO já foi escolhido!");
+
+        }else if(curColor === "oklch(62.3% 0.214 259.815)" && players.find(player => player.color === "oklch(62.3% 0.214 259.815)")){
+            alert("A cor AZUL já foi escolhido!");
+
+        }else if(curColor === "oklch(85.2% 0.199 91.936)" && players.find(player => player.color === "oklch(85.2% 0.199 91.936)")){
+            alert("A cor AMARELO já foi escolhido!");
+
         } else {
             let player = creatPlayer(inputPlayer.value, curColor);
             console.log(player);
@@ -80,6 +103,8 @@ addPlayer.addEventListener("click", ()=>{
                 `
             })
             showPlayers.innerHTML = container;
+
+            console.log(players)
         }
     } else {
         alert("Já atingiu o limite máximo de jogadores");
@@ -94,7 +119,7 @@ confirmPlayers.addEventListener("click", ()=>{
     if(players.length < 2){
         alert("Quantidade de jogadore insuficiente");
     } else {
-        window.location.href = "../templates/gameBattle.html"
+        window.location.href = "../templates/giveCards.html"
     }
 });
 

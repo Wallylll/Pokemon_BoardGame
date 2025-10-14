@@ -35,11 +35,11 @@ function creatPlayer(name, color){
     return player;
 }
 
-let playerTest = new Player("James", "Red");
+/*let playerTest = new Player("James", "Red");
 playerTest.addPokemon();
 playerTest.addItem();
 console.log(playerTest);
-
+*/
 
 export {players};
 export {creatPlayer};
