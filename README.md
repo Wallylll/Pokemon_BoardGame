@@ -13,3 +13,12 @@ VERSÕES:
 
   -V1.1:
       "Configurando e organizando o desing de jogo, (Dispositivos Móveis);
+      
+  -V1.2:
+      "Inplementando uma página de inicio de jogo e adicionando um script para a criação automática de jogadores.";
+      
+  -V1.3:
+      "Configurando a mecânica de escolha, limite e tratamento de nome e cor dos jogadores.";
+      
+  -V1.4:
+      "Adicionando uma tela de embaralhamento de cartas e preparação para a batalha.";
