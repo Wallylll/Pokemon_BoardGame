@@ -21,6 +21,12 @@ const showPlayers = document.querySelector("#showPlayers");
 const selectColor = document.querySelector("#selectColor");
 let curColor;
 
+//Armazenando as cores em variáveis:
+let red = "#fb2c36";
+let white = "#cad5e2";
+let blue = "#2b7fff";
+let yellow = "#fcc800";
+
 selectColor.addEventListener("change", () => {
     
     let colorValue = selectColor.value;
@@ -32,8 +38,8 @@ selectColor.addEventListener("change", () => {
             if(players.find(player => player.color === "red")){
                 alert("Um jogador já possui essa cor.");
             }else{
-                curColor = "oklch(63.7% 0.237 25.331)";
-                inputPlayer.style.backgroundColor = 'oklch(63.7% 0.237 25.331)';
+                curColor = red;
+                inputPlayer.style.backgroundColor = red;
             }
             break;
         case "white":
@@ -41,8 +47,8 @@ selectColor.addEventListener("change", () => {
             if(players.find(player => player.color === "white")){
                 alert("Um jogador já possui essa cor.");
             }else{
-                curColor = "oklch(86.9% 0.022 252.894)";
-                inputPlayer.style.backgroundColor = "oklch(86.9% 0.022 252.894)";
+                curColor = white;
+                inputPlayer.style.backgroundColor = white;
             }
             break;
         case "blue":
@@ -50,8 +56,8 @@ selectColor.addEventListener("change", () => {
             if(players.find(player => player.color === "blue")){
                 alert("Um jogador já possui essa cor.");
             }else{
-                curColor = "oklch(62.3% 0.214 259.815)";
-                inputPlayer.style.backgroundColor = "oklch(62.3% 0.214 259.815)";
+                curColor = blue;
+                inputPlayer.style.backgroundColor = blue;
             }
             break;
          case "yellow":
@@ -59,10 +65,10 @@ selectColor.addEventListener("change", () => {
             if(players.find(player => player.color === "yellow")){
                 alert("Um jogador já possui essa cor.");
             }else{
-                curColor = "oklch(85.2% 0.199 91.936)";
-                inputPlayer.style.backgroundColor = "oklch(85.2% 0.199 91.936)";
+                curColor = yellow;
+                inputPlayer.style.backgroundColor = yellow;
             }
-             break;
+            break;
     }
 })
 
@@ -75,16 +81,16 @@ addPlayer.addEventListener("click", ()=>{
         if(inputPlayer.value === ""){
             alert("Insira um nome para o jogador!");
 
-        }else if(curColor === "oklch(63.7% 0.237 25.331)" && players.find(player => player.color === "oklch(63.7% 0.237 25.331)")){
+        }else if(curColor === red && players.find(player => player.color === red)){
             alert("A cor VERMELHO já foi escolhido!");
 
-        } else if(curColor === "oklch(86.9% 0.022 252.894)" && players.find(player => player.color === "oklch(86.9% 0.022 252.894)")){
+        } else if(curColor === white && players.find(player => player.color === white)){
             alert("A cor BRANCO já foi escolhido!");
 
-        }else if(curColor === "oklch(62.3% 0.214 259.815)" && players.find(player => player.color === "oklch(62.3% 0.214 259.815)")){
+        }else if(curColor === blue && players.find(player => player.color === blue)){
             alert("A cor AZUL já foi escolhido!");
 
-        }else if(curColor === "oklch(85.2% 0.199 91.936)" && players.find(player => player.color === "oklch(85.2% 0.199 91.936)")){
+        }else if(curColor === yellow && players.find(player => player.color === yellow)){
             alert("A cor AMARELO já foi escolhido!");
 
         } else {
