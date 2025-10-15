@@ -1,18 +1,13 @@
 import { players, creatPlayer } from "./scr_jogadores.js";
 
 
-/*
-const btn_playerRed = document.querySelector("#player");
-const playerWhite = document.querySelector("#player");
-const playerBlue = document.querySelector("#player");
-const playerYellow = document.querySelector("#player");
-*/
+//Definindo as cores usadas nos players para automatizar as condições:
+const red = "#fb2c36";
+const white = "#cad5e2";
+const blue = "#2b7fff";
+const yellow = "#fcc800";
 
-let red = "#fb2c36";
-let white = "#cad5e2";
-let blue = "#2b7fff";
-let yellow = "#fcc800";
-
+//Teste. Apagar após trazer os players da página 'index.html':
 let player1 = creatPlayer("James", red);
 players.push(player1);
 let player2 = creatPlayer("Jaison", yellow);
@@ -29,20 +24,20 @@ let container = "";
 
 players.forEach(player => {
     container += `
-        <div class="player" id="player${player.color}">
-            <h2 id="tit_curPlayer">Jogador: ${player.name} </h2>
+        <div class="player" id="player_${player.name}" style="background: ${player.color};">
+            <h2>Jogador: ${player.name} </h2>
         
             <h3>Pokédex: </h3>
-            <div class="pokedex" id="pokedex${player.color}">
+            <div class="pokedex" id="pokedex_${player.name}">
                 ${player.pokedex}
             </div>
             <button class="btn_addPokemon" id="addPokemon_${player.name}">Adicionar Pokémon</button>
             
-            <h3>Itens</h3>
-            <div class="invetory" id="invenory${player.color}">
+            <h3>Itens:</h3>
+            <div class="invetory" id="invenory_${player.name}">
                 ${player.inventory}
             </div>
-            <button class="btn_addItem">Adicionar Item</button>
+            <button class="btn_addItem" id="addItem_${player.name}"">Adicionar Item</button>
         </div>
     ` 
 });
@@ -52,29 +47,31 @@ const containerPlayer = document.querySelectorAll(".player");
 
 containerPlayer.forEach(container => {
     container.addEventListener("click", (event) => {
-        //console.log(event.target);
         const playerClicked = players.find(player => event.target.id.includes(player.name));
-        
-        if(playerClicked){
-            console.log(playerClicked);
 
+        if(playerClicked){
             if(event.target.classList.contains("btn_addPokemon")){
-                playerClicked.addPokemon();
+                let pokedexT = playerClicked.pokedex;
+                if(pokedexT.length < 6){
+                    playerClicked.addPokemon();
+
+                } else {
+                    alert(`${playerClicked.name}, já atingiu o limite de 6 Pokémons`);
+                }
             }
             if(event.target.classList.contains("btn_addItem")){
-                playerClicked.addItem();
+                let inventoryT = playerClicked.inventory;
+                if(inventoryT.length < 3){
+                    playerClicked.addItem();
+                } else {
+                    alert(`${playerClicked.name}, já atingiu o limite de 3 itens`);
+                }
             }
         }
-
-        //Testar lógica buscando pelo indicie e não pelo ID.
-        /*
-        let index = players.findIndex(p => p.color === red);
-        console.log(index);
-        */
+        console.log(players);
     });
-
-
-    /**
+});
+    /*
      btn_addPokemon.forEach(pokemon =>{
         pokemon.addEventListener("click", ()=> {
             players[0].addPokemon();
@@ -88,9 +85,6 @@ containerPlayer.forEach(container => {
             console.log(player);
         });
     });
-    
-    *  * */
-});
-
+    */
 const battle = document.querySelector("#battle");
 battle.onclick = ()=> window.location.href = "./gameBattle.html";
