@@ -22,3 +22,4 @@ VERSÕES:
       
   -V1.4:
       "Adicionando uma tela de embaralhamento de cartas e preparação para a batalha.";
+            -Função de adicionar cartas e esconder as cartas adicionadas;
