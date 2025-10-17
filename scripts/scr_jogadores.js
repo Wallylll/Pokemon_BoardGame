@@ -19,7 +19,7 @@ class Player {
         //Adicionar um cerificador para limmitar o numero de pokemons;
         let pulledPokemon = pokemons[random(pokemons.length)];
         this.pokedex.push(pulledPokemon);
-        return this.pokedex;
+        return this.pulledPokemon;
     }
     addItem(){
         //Adicionar um cerificador para limmitar o numero de itens;

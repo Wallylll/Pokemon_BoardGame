@@ -1,4 +1,5 @@
 import { players, creatPlayer } from "./scr_jogadores.js";
+import pokemons from "./scr_pokemonsArray.js"
 
 
 //Definindo as cores usadas nos players para automatizar as condições:
@@ -29,15 +30,17 @@ players.forEach(player => {
         
             <h3>Pokédex: </h3>
             <div class="pokedex" id="pokedex_${player.name}">
-                ${player.pokedex}
+               
             </div>
             <button class="btn_addPokemon" id="addPokemon_${player.name}">Adicionar Pokémon</button>
+            <span><button id="btn_hidPokemon_${player.name}">Esconder Pokémons</button></span>
             
             <h3>Itens:</h3>
-            <div class="invetory" id="invenory_${player.name}">
+            <div class="invetory" id="inventory_${player.name}">
                 ${player.inventory}
             </div>
-            <button class="btn_addItem" id="addItem_${player.name}"">Adicionar Item</button>
+            <button class="btn_addItem" id="addItem_${player.name}">Adicionar Item</button>
+            <span><button id="btn_hidItem_${player.name}">Esconder Itens</button></span>
         </div>
     ` 
 });
@@ -45,16 +48,30 @@ playersCards.innerHTML = container;
 
 const containerPlayer = document.querySelectorAll(".player");
 
+
+//Adicionar funcionalidade de esconder as cartas no evento click abaixo;
+//Ideia: Fazer a mesma busca, somando com um contains add ou remove no id;
 containerPlayer.forEach(container => {
     container.addEventListener("click", (event) => {
         const playerClicked = players.find(player => event.target.id.includes(player.name));
-
+        
+        //Div onde vai ficar todos conteudos de cada player:
+        const containerPlayer = document.querySelectorAll(".player");
+        
+        //Referenciando a div criada pós script imprimindo a img dos pokemons e itens:
+        const pokedexDiv = document.querySelector(`#pokedex_${playerClicked.name}`);
+        const inventoryDiv = document.querySelector(`#inventory_${playerClicked.name}`);
+        
         if(playerClicked){
             if(event.target.classList.contains("btn_addPokemon")){
                 let pokedexT = playerClicked.pokedex;
                 if(pokedexT.length < 6){
                     playerClicked.addPokemon();
 
+                    //Criando um jeito de armazenar o pokemon automático e referenci´-lo no código abaixo:
+                    pokedexDiv.innerHTML = playerClicked.pokedex.map(pokemon => `
+                        <img src="${pokemon.img}" alt="Carta: ${pokemon.name}">
+                    `).join("");
                 } else {
                     alert(`${playerClicked.name}, já atingiu o limite de 6 Pokémons`);
                 }
@@ -63,6 +80,10 @@ containerPlayer.forEach(container => {
                 let inventoryT = playerClicked.inventory;
                 if(inventoryT.length < 3){
                     playerClicked.addItem();
+
+                    inventoryDiv.innerHTML = playerClicked.inventory.map(item =>{
+                        `img src="${item.img}" alt="Carta: ${item.name}">`
+                    }).join("");
                 } else {
                     alert(`${playerClicked.name}, já atingiu o limite de 3 itens`);
                 }
@@ -71,20 +92,32 @@ containerPlayer.forEach(container => {
         console.log(players);
     });
 });
+
     /*
-     btn_addPokemon.forEach(pokemon =>{
-        pokemon.addEventListener("click", ()=> {
-            players[0].addPokemon();
-            console.log(player);
-            console.log(players)
+    Retirado da linha 62:
+        btn_addPokemon.forEach(pokemon =>{
+            pokemon.addEventListener("click", ()=> {
+                players[0].addPokemon();
+                console.log(player);
+                console.log(players)
+            });
         });
-    });
-    btn_addItem.forEach(item =>{
-        item.addEventListener("click", ()=> {
-            player.addItem();
-            console.log(player);
+        btn_addItem.forEach(item =>{
+            item.addEventListener("click", ()=> {
+                player.addItem();
+                console.log(player);
+            });
         });
-    });
     */
-const battle = document.querySelector("#battle");
+
+    /*
+    Retirado da linha 72: 
+        playerClicked.pokedex.forEach(pokemon => {
+            let img = document.createElement("img");
+            img.src = pokemon.img;
+            img.alt = pokemon.name;
+            pokedexDiv.appendChild(img);
+        });
+    */
+const battle = document.querySelector("#btn_battle");
 battle.onclick = ()=> window.location.href = "./gameBattle.html";

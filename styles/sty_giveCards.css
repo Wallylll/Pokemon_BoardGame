@@ -1,3 +1,19 @@
 .player{
     border: 1px solid black;
 }
+#addPokemons{
+    position: relative;
+}
+#btn_battle{
+    background-color: purple;
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+}
+
+.pokedex img{
+    width: 4rem;
+}
