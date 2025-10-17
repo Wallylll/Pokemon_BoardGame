@@ -70,8 +70,8 @@ containerPlayer.forEach(container => {
 
                     //Criando um jeito de armazenar o pokemon automático e referenci´-lo no código abaixo:
                     pokedexDiv.innerHTML = playerClicked.pokedex.map(pokemon => `
-                        <img src="${pokemon.img}" alt="Carta: ${pokemon.name}">
-                    `).join("");
+                        <img class="pokemon img ${playerClicked.name}"src="${pokemon.img}" alt="Carta: ${pokemon.name}">
+                    `).join("");//Adicionando uma classe para todas as cartas de cada jogador para alterá-las
                 } else {
                     alert(`${playerClicked.name}, já atingiu o limite de 6 Pokémons`);
                 }
@@ -88,6 +88,11 @@ containerPlayer.forEach(container => {
                     alert(`${playerClicked.name}, já atingiu o limite de 3 itens`);
                 }
             }
+            //if para alterar as cartas de o hid for clicado
+            if(event.target.id.includes("hid") && event.target.id.includes("Pokemon")){
+                
+            }
+            console.log(event.target)
         }
         console.log(players);
     });
