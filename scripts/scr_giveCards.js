@@ -1,5 +1,4 @@
 import { players, creatPlayer } from "./scr_jogadores.js";
-import pokemons from "./scr_pokemonsArray.js"
 
 
 //Definindo as cores usadas nos players para automatizar as condições:
@@ -42,7 +41,7 @@ players.forEach(player => {
             <button class="btn_addItem" id="addItem_${player.name}">Adicionar Item</button>
             <span><button id="btn_hidItem_${player.name}">Esconder Itens</button></span>
         </div>
-    ` 
+    `
 });
 playersCards.innerHTML = container;
 
@@ -70,7 +69,7 @@ containerPlayer.forEach(container => {
 
                     //Criando um jeito de armazenar o pokemon automático e referenci´-lo no código abaixo:
                     pokedexDiv.innerHTML = playerClicked.pokedex.map(pokemon => `
-                        <img class="pokemon img ${playerClicked.name}"src="${pokemon.img}" alt="Carta: ${pokemon.name}">
+                        <img class="pokemon_${playerClicked.name} "src="${pokemon.img}" alt="Carta: ${pokemon.name}">
                     `).join("");//Adicionando uma classe para todas as cartas de cada jogador para alterá-las
                 } else {
                     alert(`${playerClicked.name}, já atingiu o limite de 6 Pokémons`);
@@ -88,16 +87,16 @@ containerPlayer.forEach(container => {
                     alert(`${playerClicked.name}, já atingiu o limite de 3 itens`);
                 }
             }
-            //if para alterar as cartas de o hid for clicado
+            //Verificação de botão HID, substitui todas as imagens do jogador que clicou:
             if(event.target.id.includes("hid") && event.target.id.includes("Pokemon")){
-                
+                let pokeHid = document.querySelectorAll(`.pokemon_${playerClicked.name}`);
+                pokeHid.forEach(img => img.src = "../imgs/versoCard.webp");
             }
             console.log(event.target)
         }
         console.log(players);
     });
 });
-
     /*
     Retirado da linha 62:
         btn_addPokemon.forEach(pokemon =>{
@@ -125,4 +124,13 @@ containerPlayer.forEach(container => {
         });
     */
 const battle = document.querySelector("#btn_battle");
-battle.onclick = ()=> window.location.href = "./gameBattle.html";
+
+battle.addEventListener("click", (event)=>{
+    players.forEach(player => {
+        if(player.pokedex.length < 1){
+            alert(`${player.name} não pode jogar sem Pokémons!`);
+        }else if(players.every(pokedex)){ //player.every(pokedex.length > 0)){
+            window.location.href = "./gameBattle.html";
+        }
+    });
+});

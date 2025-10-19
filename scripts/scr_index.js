@@ -129,7 +129,6 @@ confirmPlayers.addEventListener("click", ()=>{
     }
 });
 
-
 //Configurando o número de jogadores corretamente:
 /*confirmPlayers.addEventListener("click", ()=>{
  
@@ -143,7 +142,6 @@ confirmPlayers.addEventListener("click", ()=>{
         modalNumbers.close();
         modalNames.showModal();
     }
-
 });
            <input type="text" id="namePlayer1" placeholder="Jogador 1" name="red">
             <input type="text" id="namePlayer2" placeholder="Jogador 2" name="white">

@@ -2,14 +2,14 @@ OBJETIVO: Nesse projeto meu objetivo é automatizar o jogo de cartas personaliza
 
 ETAPAS:
   -Inserir cartas pokemons com seus atributos e habilidades;
-  -Adicionar a ulustração das cartas previamente personalizadas;
+  -Adicionar a ilustração das cartas previamente personalizadas;
   -Modelar o tabuleiro virtual onde o jogo vai acontecer;
   -Implementar as mencânicas adjunto com as regras do jogo;
 
 
 VERSÕES:
   -V1.0:
-      "Prototipo das mecânicas básicas e testes de funções";
+      "Protótipo das mecânicas básicas e testes de funções";
 
   -V1.1:
       "Configurando e organizando o desing de jogo, (Dispositivos Móveis);
@@ -21,5 +21,5 @@ VERSÕES:
       "Configurando a mecânica de escolha, limite e tratamento de nome e cor dos jogadores.";
       
   -V1.4:
-      "Adicionando uma tela de embaralhamento de cartas e preparação para a batalha.";
+      "Adicionando uma tela de embaralhamento de cartas e preparação para a batalha":
             -Função de adicionar cartas e esconder as cartas adicionadas;
