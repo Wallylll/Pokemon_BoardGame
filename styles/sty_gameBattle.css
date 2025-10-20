@@ -24,7 +24,11 @@ body{
 #players{
     display: flex;
     gap: 2rem;
-    margin-top: 1rem;
+    width: 90%;
+    justify-content: center;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.400);
+    padding: 0.5rem;
 }
 .player{
     background-color: rgba(0, 0, 0, 0.514);
@@ -74,11 +78,10 @@ body{
 }
 #curPlayer{
     width: 99vw;
-    background-color: red;
+    background-color: oklch(63.7% 0.237 25.331);
     display: flex;
     flex-direction: column;
     align-items: center;
-
     border-radius: 1rem;
     border: solid 0.2rem black;
 
@@ -142,10 +145,10 @@ body{
     flex-wrap: nowrap;
     width: 90%;
     height: 50%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
 
     position: relative;
-    border-radius: 6rem;
+    border-radius: 10rem;
 }
 
 .cardsInBattle{
