@@ -98,23 +98,6 @@ containerPlayer.forEach(container => {
     });
 });
     /*
-    Retirado da linha 62:
-        btn_addPokemon.forEach(pokemon =>{
-            pokemon.addEventListener("click", ()=> {
-                players[0].addPokemon();
-                console.log(player);
-                console.log(players)
-            });
-        });
-        btn_addItem.forEach(item =>{
-            item.addEventListener("click", ()=> {
-                player.addItem();
-                console.log(player);
-            });
-        });
-    */
-
-    /*
     Retirado da linha 72: 
         playerClicked.pokedex.forEach(pokemon => {
             let img = document.createElement("img");
@@ -126,11 +109,12 @@ containerPlayer.forEach(container => {
 const battle = document.querySelector("#btn_battle");
 
 battle.addEventListener("click", (event)=>{
-    players.forEach(player => {
-        if(player.pokedex.length < 1){
-            alert(`${player.name} não pode jogar sem Pokémons!`);
-        }else if(players.every(pokedex)){ //player.every(pokedex.length > 0)){
-            window.location.href = "./gameBattle.html";
-        }
-    });
+    if(players.every(player => player.pokedex.length > 0)){
+        window.location.href = "./gameBattle.html";
+    } else {
+        let missing = players.filter(player => player.pokedex.length < 1);
+        missing.forEach(without  => {
+            alert(`${without.name} não pode jogar sem pokémons!`);
+        });
+    }
 });
